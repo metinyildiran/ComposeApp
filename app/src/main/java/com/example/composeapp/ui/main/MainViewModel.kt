@@ -1,4 +1,4 @@
-package com.example.composeapp.ui
+package com.example.composeapp.ui.main
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
@@ -8,4 +8,8 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor() : ViewModel() {
     val clickCount = mutableStateOf(0)
+
+    fun increaseClickCount() {
+        clickCount.value += 1
+    }
 }

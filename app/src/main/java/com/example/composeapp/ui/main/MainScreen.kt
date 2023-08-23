@@ -1,4 +1,4 @@
-package com.example.composeapp.ui
+package com.example.composeapp.ui.main
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,7 +20,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 @Composable
 fun MainScreen(viewModel: MainViewModel = hiltViewModel()) {
     val emailValue = rememberSaveable { mutableStateOf("") }
-    var passwordValue by rememberSaveable { mutableStateOf(viewModel.clickCount.value.toString()) }
+    var passwordValue by rememberSaveable { mutableStateOf("") }
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -29,7 +29,7 @@ fun MainScreen(viewModel: MainViewModel = hiltViewModel()) {
         Text(text = "Clicked: ${viewModel.clickCount.value} times")
 
         Button(onClick = {
-            viewModel.clickCount.value += 1
+            viewModel.increaseClickCount()
         }) {
             Text(text = "Click Me")
         }
