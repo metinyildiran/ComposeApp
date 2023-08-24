@@ -1,8 +1,5 @@
-@file:OptIn(ExperimentalFoundationApi::class)
-
 package com.example.composeapp.ui.fruit
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -56,11 +53,11 @@ fun FruitScreen(viewModel: FruitViewModel = hiltViewModel()) {
                         fontSize = 30.sp
                     )
                 }
-            }
-
-            items(viewModel.fruits, key = { fruit: Fruit -> fruit.id }) { fruit ->
-                FruitListItem(fruit = fruit) {
-                    viewModel.removeFruit(fruit)
+            } else {
+                items(viewModel.fruits, key = { fruit: Fruit -> fruit.id }) { fruit ->
+                    FruitListItem(fruit = fruit) {
+                        viewModel.removeFruit(fruit)
+                    }
                 }
             }
         }

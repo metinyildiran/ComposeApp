@@ -4,7 +4,7 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import com.example.composeapp.data.model.Fruit
 
-class FruitViewModel:ViewModel() {
+class FruitViewModel: ViewModel() {
     val fruits = mutableStateListOf(
         Fruit("Elma", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/330px-Red_Apple.jpg"),
         Fruit("Muz", "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Musa-sp3.1.jpg/330px-Musa-sp3.1.jpg"),
